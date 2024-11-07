@@ -1,24 +1,23 @@
-# Imports the classifier function
 from classifier import classifier
-
-def classify_images(images_dir, petlabel_dic, model):
+def classify_images(images_dir, results_dic, model):
     """
     Creates the classifier labels with the classifier function, compares labels
     to pet labels, and adds the results to the results dictionary.
     
     Parameters:
       images_dir - The (string) folder path to the images
-      petlabel_dic - Dictionary with image filename as 'key' and pet image label as 'value'
+      results_dic - Dictionary with image filename as 'key' and pet image label as 'value'
       model - The CNN model architecture to use for classification ('resnet', 'alexnet', 'vgg')
     
     Returns:
       results_dic - Dictionary where key = image filename and value = [pet label, classifier label, match (1/0)]
     """
-    # Initialize results dictionary
-    results_dic = {}
-    
-    # Iterate over each filename and pet label in the petlabel_dic
-    for filename, pet_label in petlabel_dic.items():
+    # Iterate over each filename and pet label in the results_dic
+    for filename, result in results_dic.items():
+        pet_label = result[0]  # pet label should be the first element in the list
+        # Ensure pet_label is a string and strip leading/trailing whitespaces
+        pet_label = pet_label.strip() if isinstance(pet_label, str) else pet_label
+        
         # Create full path to the image file
         full_image_path = images_dir + "/" + filename
         

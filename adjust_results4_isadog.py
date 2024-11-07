@@ -15,22 +15,26 @@ def adjust_results4_isadog(results_dic, dogfile):
     This function modifies results_dic in-place. It does not return anything.
     """
 
-    # Initialize a dictionary to store dog names
-    dognames_dic = {}
+    # Initialize a set to store dog names (faster lookup)
+    dognames_set = set()
 
-    # Open and read dog names from the provided file
-    with open(dogfile, 'r') as f:
-        for line in f:
-            dog_name = line.rstrip()  # Remove trailing newline characters
-            if dog_name in dognames_dic:
-                print(f"Warning: Duplicate dog name found - {dog_name}")
-            else:
-                dognames_dic[dog_name] = 1  # Value is arbitrary, just to mark the name as present
+    # Try opening the dog names file and reading it
+    try:
+        with open(dogfile, 'r') as f:
+            for line in f:
+                dog_name = line.rstrip()  # Remove trailing newline characters
+                if dog_name in dognames_set:
+                    print(f"Warning: Duplicate dog name found - {dog_name}")
+                else:
+                    dognames_set.add(dog_name)
+    except FileNotFoundError:
+        print(f"Error: The file {dogfile} was not found.")
+        return  # Exit if file is not found
 
     # Iterate through results_dic to determine if labels are dogs
     for key in results_dic:
-        pet_label_is_dog = 1 if results_dic[key][0] in dognames_dic else 0
-        classifier_label_is_dog = 1 if results_dic[key][1] in dognames_dic else 0
+        pet_label_is_dog = 1 if results_dic[key][0] in dognames_set else 0
+        classifier_label_is_dog = 1 if results_dic[key][1] in dognames_set else 0
         
         # Extend the results list with dog/not-dog classification
         results_dic[key].extend([pet_label_is_dog, classifier_label_is_dog])

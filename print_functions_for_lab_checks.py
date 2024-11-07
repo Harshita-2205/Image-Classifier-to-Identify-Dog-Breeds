@@ -1,7 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# */AIPND/intropylab-classifying-images/print_functions_for_lab_checks.py
-#                                                                             
+
 # PROGRAMMER: Jennifer S.                                                    
 # DATE CREATED: 05/14/2018                                  
 # REVISED DATE:             <=(Date Revised - if any)                         

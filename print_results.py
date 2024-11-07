@@ -18,8 +18,8 @@ def print_results(results_dic, results_stats_dic, model, print_incorrect_dogs=Fa
     
     # Print overall counts
     print(f"Number of Images: {results_stats_dic['n_images']}")
-    print(f"Number of Dog Images: {results_stats_dic['n_dogs']}")
-    print(f"Number of 'Not-a' Dog Images: {results_stats_dic['n_not_dogs']}\n")
+    print(f"Number of Dog Images: {results_stats_dic['n_dogs_img']}")
+    print(f"Number of 'Not-a' Dog Images: {results_stats_dic['n_notdogs_img']}\n")
     
     # Print statistics
     print("Statistics:")

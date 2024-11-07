@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# */AIPND-revision/intropyproject-classify-pet-images/check_images.py
+
 
 # PROGRAMMER: [Your Name]
 # DATE CREATED: [Creation Date]
@@ -34,7 +32,7 @@ def main():
 
     # Classify images and add results to the dictionary
     # Updated function call in main
-    results_dic = classify_images(in_arg.dir, petlabel_dic, in_arg.arch)
+    results_dic = classify_images(in_arg.dir, results, in_arg.arch)
     check_classifying_images(results)
 
     # Adjust results for dog classifications
@@ -48,7 +46,7 @@ def main():
 
     # Print summary results and errors (if any)
     # Call to print_results() in main function
-    print_results(results_dic, results_stats_dic, in_arg.arch, print_incorrect_dogs=False, print_incorrect_breed=False)
+    print_results(results_dic, results_stats, in_arg.arch, print_incorrect_dogs=False, print_incorrect_breed=False)
 
     
     # Measure total program runtime by collecting end time

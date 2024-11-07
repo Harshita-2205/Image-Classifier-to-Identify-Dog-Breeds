@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 # -*- coding: utf-8 -*-
 # */AIPND/intropylab-classifying-images/test_classifier.py
 #                                                                             
