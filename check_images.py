@@ -1,12 +1,3 @@
-
-
-# PROGRAMMER: [Your Name]
-# DATE CREATED: [Creation Date]
-# REVISED DATE: [Last Revision Date]
-# PURPOSE: Classifies pet images using a pretrained CNN model, compares these
-#          classifications to the true identity of the pets in the images, and
-#          summarizes how well the CNN performed on the image classification task.
-
 # Imports python modules
 from time import time
 from print_functions_for_lab_checks import *
