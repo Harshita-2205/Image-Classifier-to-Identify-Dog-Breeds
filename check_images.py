@@ -34,10 +34,11 @@ def main():
     # Calculate results statistics
     results_stats = calculates_results_stats(results)
     check_calculating_results(results, results_stats)
+    print("\n")
 
     # Print summary results and errors (if any)
     # Call to print_results() in main function
-    print_results(results_dic, results_stats, in_arg.arch, print_incorrect_dogs=False, print_incorrect_breed=False)
+    print_results(results_dic, results_stats, in_arg.arch, print_incorrect_dogs=True, print_incorrect_breed=True)
 
     
     # Measure total program runtime by collecting end time

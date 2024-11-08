@@ -1,4 +1,5 @@
 from classifier import classifier
+import os.path
 def classify_images(images_dir, results_dic, model):
     """
     Creates the classifier labels with the classifier function, compares labels
@@ -19,7 +20,7 @@ def classify_images(images_dir, results_dic, model):
         pet_label = pet_label.strip() if isinstance(pet_label, str) else pet_label
         
         # Create full path to the image file
-        full_image_path = images_dir + "/" + filename
+        full_image_path = os.path.join(images_dir, filename)
         
         # Get the classifier label using the classifier function
         classifier_label = classifier(full_image_path, model)

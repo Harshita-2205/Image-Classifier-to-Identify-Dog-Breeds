@@ -31,10 +31,10 @@ def adjust_results4_isadog(results_dic, dogfile):
         print(f"Error: The file {dogfile} was not found.")
         return  # Exit if file is not found
 
-    # Iterate through results_dic to determine if labels are dogs
-    for key in results_dic:
-        pet_label_is_dog = 1 if results_dic[key][0] in dognames_set else 0
-        classifier_label_is_dog = 1 if results_dic[key][1] in dognames_set else 0
+    # Iterate through results_dic values to determine if labels are dogs
+    for value in results_dic.values():
+        pet_label_is_dog = 1 if value[0] in dognames_set else 0
+        classifier_label_is_dog = 1 if value[1] in dognames_set else 0
         
         # Extend the results list with dog/not-dog classification
-        results_dic[key].extend([pet_label_is_dog, classifier_label_is_dog])
+        value.extend([pet_label_is_dog, classifier_label_is_dog])

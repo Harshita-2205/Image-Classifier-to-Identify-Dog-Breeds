@@ -8,6 +8,10 @@ def get_pet_labels(image_dir):
     results_dic = {}
     
     for filename in filename_list:
+        # Skip dotfiles
+        if filename.startswith('.'):
+            continue
+        
         # Process only .jpg files
         if filename.endswith(".jpg"):
             # Convert filename to lowercase and split by '_'
