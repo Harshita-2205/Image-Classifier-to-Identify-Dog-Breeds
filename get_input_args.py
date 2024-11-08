@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# */AIPND-revision/intropyproject-classify-pet-images/get_input_args.py
-
-# PROGRAMMER: [Your Name]
-# DATE CREATED: [Date]
-# REVISED DATE: [Date]
-# PURPOSE: Retrieve 3 command line inputs using argparse with default values if not provided.
-
 import argparse
 
 def get_input_args():
